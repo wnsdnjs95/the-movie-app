@@ -36,6 +36,12 @@ function LandingPage() {
       .then((result) => result.json())
 
       .then((result) => {
+        // console.log(result)
+
+        // console.log('Movies',...Movies)
+
+        // console.log('result',...result.results)
+
         setMovies([...Movies, ...result.results]);
 
         setMainMovieImage(MainMovieImage || result.results[0]);
