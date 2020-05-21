@@ -21,7 +21,7 @@ function LandingPage() {
       .then((response) => {
         console.log(response);
         setMovies([...Movies, ...response.results]);
-        setMainMovieImage(response.results[0]);
+        setMainMovieImage(MainMovieImage || response.results[0]);
         setcurrentPage(response.page);
       });
   };
@@ -56,6 +56,7 @@ function LandingPage() {
             Movies.map((movie, index) => (
               <React.Fragment key={index}>
                 <GridCards
+                  landingPage
                   image={
                     movie.poster_path
                       ? `${IMAGE_BASE_URL}w500${movie.poster_path}`
